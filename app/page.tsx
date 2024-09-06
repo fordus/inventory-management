@@ -63,6 +63,7 @@ export default function InventoryManagement() {
 
   const handleUpdate = async () => {
     if (editingItem) {
+      console.log(editingItem)
       try {
         const res = await fetch(`/api/inventory/${editingItem.id}`, {
           method: 'PUT',
@@ -215,6 +216,7 @@ export default function InventoryManagement() {
                               <DialogTitle>Edit Item</DialogTitle>
                             </DialogHeader>
                             <div className="grid gap-4 py-4">
+
                               <Input
                                 placeholder="Name"
                                 value={editingItem?.name || ''}
